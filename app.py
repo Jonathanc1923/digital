@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 
 app = Flask(__name__)
-app.secret_key = 'tu_clave_secreta_aqui'  # Reemplaza 'tu_clave_secreta_aqui' por una clave segura.
+app.secret_key = 'as8327e9adak3iiq9'  # Reemplaza 'tu_clave_secreta_aqui' por una clave segura.
 
 # Diccionario para almacenar usuarios y contraseñas (esto es solo para demostración)
 usuarios = {
