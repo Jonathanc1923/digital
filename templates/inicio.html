@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bienvenido a PyPic - Servicio de Diseños Digitales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Bienvenido a PyPic</h1>
+        <p class="subtitulo">Servicio de Diseños Digitales de Professional Pic y Jony Lager</p>
+        
+        <div class="formulario">
+            <h2>Iniciar Sesión</h2>
+            <form method="POST" action="/inicioproyecto">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+                <br>
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" required>
+                <br>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <p class="error">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'error' %}
+                            {{ message }}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
